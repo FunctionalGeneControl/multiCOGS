@@ -1,7 +1,7 @@
-Package: rCOGS
+Package: rCOGS2
 Title: Computes gene prioritisation scores based on promoter capture Hi-C data
 Version: 0.0.0.9000
-Authors@R: person("Oliver", "Burren", email = "ob_219@cam.ac.uk", role = c("aut", "cre"))
+Authors@R: person("Oliver", "Burren", email = "ob_219@cam.ac.uk", role = c("aut", "cre")), person("Mikhail", "Spivakov", email = "mikhail.spivakov@lms.mrc.ac.uk", role = c("aut"))
 Description: What the package does (one paragraph).
 Depends: R (>= 3.3.3), data.table
 Imports:

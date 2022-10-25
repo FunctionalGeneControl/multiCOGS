@@ -1,7 +1,0 @@
-title: rCOGS
-url: http://ollyburren.github.io/rCOGS
-template:
-  params:
-    bootswatch: simplex
-news:
-destination: docs
