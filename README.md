@@ -8,4 +8,4 @@ These R scripts implement an updated version of the rCOGS package with the follo
 
 * Several minor bug fixes
 
-Note that rROGS2 R package is still in progress, and currently the scripts should be are sourced directly into the analysis notebooks as in the example provided.
+Note that rROGS2 R package is still in progress, and currently all scripts should be sourced directly into the analysis notebooks.
