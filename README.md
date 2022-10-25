@@ -1,16 +1,7 @@
-# rCOGS
+These R scripts implement an updated version of the rCOGS package with the following key differences:
+* The algorithm has been modified to enable use with multivariate fine-mapped GWAS data (note that currently read_gwas() can only perform Wakefield synthesis based on a single causal variant assumption and multivariate fine-mapped data need to be provided directly to the compute_cogs() function
+* All operations on genomic intervals are performed using data.tables directly. GenomicRanges are no longer used, avoiding the need for interconversion
+* The number of promoter-proximal fragments included in the analysis can be specified by the user. Also note that make_vprom() is now called from within make_pchic() that now gains the vPromLen parameter
+* Several minor bug fixes
 
-This package contains routines to prioritise putative causal genes and tissue contexts using promoter-capture Hi-C data. COGS stands for __C__ apture Hi-C __O__ mnibus __G__ ene __S__ core and works best with pcHi-C datasets processed using [CHiCAGO](https://bioconductor.org/packages/release/bioc/html/Chicago.html). A full description of the approach can be found in [Javierre et al.](http://dx.doi.org/10.1016/j.cell.2016.09.037) and [Burren et al.](http://dx.doi.org/10.1186/s13059-017-1285-0).
-
-# Installation
-
-```
-library(devtools)
-install_github('ollyburren/rCOGS',build_vignettes=TRUE)
-````
-
-# Documentation
-
-Please see online documentation and vignettes for common use cases [here](https://ollyburren.github.io/rCOGS).
-
-A quickstart guide for performing your own analyses is available [here](https://ollyburren.github.io/rCOGS/articles/Quickstart.html)
+Note that rROGS2 R package is still in progress, and currently the scripts should be are sourced directly into the analysis notebooks as in the example provided.
