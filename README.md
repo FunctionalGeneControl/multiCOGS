@@ -1,4 +1,6 @@
-These R scripts implement an updated version of the rCOGS package with the following key differences:
+These R scripts implement an updated version of the rCOGS package as used in Malysheva/Ray-Jones et al., bioRxiv 2022. 
+
+The key differences from the original rCOGS package (https://github.com/ollyburren/rCOGS) are as follows:
 
 * The algorithm has been modified to enable use with multivariate fine-mapped GWAS data. Note that currently read_gwas() can only perform Wakefield synthesis based on a single causal variant assumption and multivariate fine-mapped data need to be provided directly to the compute_cogs() function
 
