@@ -10,4 +10,6 @@ The key differences from the original rCOGS package (https://github.com/ollyburr
 
 * Several minor bug fixes
 
-Note that rROGS2 R package is still in progress, and currently all scripts should be sourced directly into the analysis notebooks.
+Note that multiROGS R package is still in progress, and currently all scripts should be sourced directly into the analysis notebooks. 
+
+The folders rCOGS_runs and rCOGS_scripts contain analysis code used in the Malysheva/Ray-Jones et al., bioRxiv 2022 that utilises multiCOGS functionality and can be seen as use examples for the new package.
