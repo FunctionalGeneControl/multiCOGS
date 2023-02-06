@@ -7,7 +7,7 @@ script="Make_rCOGS_input_files.sh"
 #### Please run this script from the scripts directory.
 
 #Declare the number of mandatory args
-margs=6
+margs=5
 
 # Common functions - BEGIN
 function example {
@@ -23,13 +23,13 @@ function help {
     echo -e "MANDATORY:"
     echo -e "  -i,  --inputDir               The full path to where you want preliminary input files to go, like non formatted snps etc"
     echo -e "  -o,  --outDir                 The full path to where you want COGS input files to go"
-    echo -e "  -g,  --gwas                   The full path to the trait data from GWAS catalog. Must have cols named chromosome, base_pair_location, p_value and variant_id"
     echo -e "  -p,  --pchic                  The full path to the pchic peak matrix"
     echo -e "  -b,  --baitmap                The full path to the baitmap"  
     echo -e "  -r,  --rmap                   The full path to the rmap. If bin+solBaits was used, this should be the fragment level rmap.\n"
     echo -e "OPTIONAL:"
     echo -e "  -hg19, --GRCh37                Flag that the required assembly is GRCh37"
     echo -e "  -hg38, --GRCh38                Flag that the required assembly is GRCh38"
+    echo -e "  -g,  --gwas                    The full path to the trait data from GWAS catalog. Must have cols named chromosome, base_pair_location, p_value and variant_id. If using a pre-made SuSIE table, which already contains SNPs and associated PPIs, you don't need to supply a GWAS file here. It will be used for VEP coding SNP generation and for running multiCOGS."
     echo -e "  -expa, --expandBaitmap         Flag to expand the baitmap from binned to fragment level. Must also supply binned rmap with solitary baits using rmapSolBaits." 
     echo -e "  -sol,  --rmapSolBaits          Full path to the rmap in binned setting with solitary baits, if used"
     echo -e "  -t,  --tempdir                Directory for temporary files, default = current wd"
@@ -78,7 +78,7 @@ margs_precheck $# $1
 inputDir=
 outDir=
 tempDir=.
-gwas=
+gwas="NONE"
 pchic=
 baitmap=
 rmap=
@@ -135,7 +135,7 @@ do
 done
 
 # Pass here your mandatory args for check
-margs_check $inputDir $outDir $gwas $rmap $baitmap $pchic
+margs_check $inputDir $outDir $rmap $baitmap $pchic
 
 
 ################ Run processes
@@ -236,9 +236,13 @@ fi
 
 ############## Annotate PCHi-C and design files using annot_CHi-C_files.R from the scripts folder (working directory)
 cd $PBS_O_WORKDIR
+
 ### This script will annotate pchic and design files. It will add unbaited promoters to the baitmap.
 
+### Will still run if you don't supply GWAS (because, for instance, you're using a SuSIE output table instead)
+
 echo "Annotating the CHiC files using annot_CHi-C_files.R"
+
 
 if [ $expandBaitmap == "TRUE" ]; then
 	Rscript annot_CHi-C_files.R \
@@ -265,7 +269,6 @@ else
 fi
 
 echo "...done!"
-
 
 
 

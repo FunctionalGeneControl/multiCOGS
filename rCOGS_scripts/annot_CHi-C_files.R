@@ -15,16 +15,16 @@ p <- add_argument(p, arg="--TSS",
 p = add_argument(p, arg="--outDir",
                  help="Required output directory", default = ".")
 p <- add_argument(p, arg="--inputDir", 
-		  help="Directory for preliminary, non formatted input files")
+                  help="Directory for preliminary, non formatted input files")
 p <- add_argument(p, arg="--gwas", 
-		  help = "Full path to GWAS file with required columns named chromosome, base_pair_location, p_value and variant_id")
+                  help = "Full path to GWAS file with required columns named chromosome, base_pair_location, p_value and variant_id. Not required (e.g. if working with pre-formatted SuSIE files rather than GWAS).")
 p <- add_argument(p, arg="--expandBaitmap", 
                   help = "Flag for expanding the baitmap to individual restriction fragments. Use if wanting to work with rmap which has unbinned baits and binned other ends. If true, must supply rmap_solBaits", 
                   flag = TRUE)
 p <- add_argument(p, arg ="--rmapSolBaits", 
                   help = "Full path to the rmap with solitary baits and binned other ends. Required if interactions were called in this setting.")
 p <- add_argument(p, arg="--verbose",
-                 help = "Flag specifying whether to print process steps.", flag=TRUE)
+                  help = "Flag specifying whether to print process steps.", flag=TRUE)
 
 opts = parse_args(p, args)
 
@@ -48,16 +48,19 @@ suppressMessages(library(tidyr))
 sink(file = paste0(outdir, "/annot_CHiC_files.log"), type = c("output", "message")) 
 
 ## Format the GWAS file
-print(paste0("Formatting GWAS file: ", gwas))
-g <- fread(gwas)
-g1 <- g[, .(chromosome, base_pair_location, p_value)]
-names(g1) = c("chr", "pos", "p")
-gName <- basename(gwas)
-fwrite(g1, file = paste0(outdir, "/", gName, "_gwas.format.txt"), sep = "\t", 
-       quote = F, row.names = F, col.names = T)
-g2 <- as.data.table(unique(g[, variant_id]))
-fwrite(g2, file = paste0(inputdir, "/rsids.txt"), sep = "\t", quote = F, 
-       row.names = F, col.names = F)
+if(gwas != "NONE") {
+  print(paste0("Formatting GWAS file: ", gwas))
+  g <- fread(gwas)
+  g1 <- g[, .(chromosome, base_pair_location, p_value)]
+  names(g1) = c("chr", "pos", "p")
+  gName <- basename(gwas)
+  fwrite(g1, file = paste0(outdir, "/", gName, "_gwas.format.txt"), sep = "\t", 
+         quote = F, row.names = F, col.names = T)
+  g2 <- as.data.table(unique(g[, variant_id]))
+  fwrite(g2, file = paste0(inputdir, "/rsids.txt"), sep = "\t", quote = F, 
+         row.names = F, col.names = F)
+}
+
 
 ## Annotate pCHi-C files
 setwd(outdir)
@@ -85,7 +88,7 @@ print("Formatting baitmap file")
 my_new_baitmap <- get_new_baitmap(tss_dt = eh_h_tss)
 check <- nrow(my_new_baitmap)
 if(check == 0) {
-	stop("Something went wrong with baitmap annotation, please check!")
+  stop("Something went wrong with baitmap annotation, please check!")
 }
 
 ############
@@ -95,7 +98,7 @@ names(my_new_baitmap2) = c("fragid", "ensg", "biotype")
 my_new_baitmap3 <- my_new_baitmap2[!is.na(ensg)] # FragIDs in this baitmap correspond to unbinned fragments.
 check2 <- nrow(my_new_baitmap3)
 if(check2 == 0) {
-        stop("Something went wrong with baitmap annotation, please check!")
+  stop("Something went wrong with baitmap annotation, please check!")
 }
 fwrite(my_new_baitmap3, file = "PCHiC_design_annotation_plusUnbaited_with_geneType.txt", 
        row.names = FALSE, col.names = TRUE, sep = "\t", quote = FALSE)
@@ -106,7 +109,7 @@ print("Annotated baitmap saved as PCHiC_design_annotation_plusUnbaited_with_gene
 pm <- fread(my_pm)
 check3 <- nrow(pm)
 if(check3 == 0) {
-	stop("Peakmatrix file is empty, please check!")
+  stop("Peakmatrix file is empty, please check!")
 }
 
 if("clusterID" %in% names(pm)) {
@@ -125,7 +128,7 @@ baitmap_dt_nl_genes <- my_new_baitmap_small[baitmap_dt_nl, on = c("fragID"), nom
 h <- unique(baitmap_dt_nl_genes[, .(ensg, genename, type, strand, fragID)])
 check4 <- nrow(h)
 if(check4 == 0) {
-	stop("Something went wrong with annotating the baitmap, please check!")
+  stop("Something went wrong with annotating the baitmap, please check!")
 }
 
 
@@ -245,14 +248,13 @@ annot4 <- annot3[oeChr != "MT"]
 
 check5 <- nrow(annot4)
 if(check5 == 0) {
-	stop("The final formatted peak matrix was empty, something went wrong!")
+  stop("The final formatted peak matrix was empty, something went wrong!")
 }
 
 fwrite(annot4, file = paste0(my_pm_name, "_pm.format.txt"), 
-            row.names = FALSE, col.names = TRUE, sep = "\t", quote = FALSE)
+       row.names = FALSE, col.names = TRUE, sep = "\t", quote = FALSE)
 
 print("Finished annotating PCHiC files")
-
 
 
 
