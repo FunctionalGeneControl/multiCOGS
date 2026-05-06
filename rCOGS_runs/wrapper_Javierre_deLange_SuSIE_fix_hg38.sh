@@ -51,7 +51,7 @@ cp ~/rCOGS_in/COGS_input_deLange_ILCs_hg38_SuSIE_fix/coding.format.txt ./
 
 source activate DT_DPLYR
 cd ${OUTDIR}
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -64,7 +64,7 @@ conda deactivate
 
 source activate DT_DPLYR
 cd ${OUTDIR}
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -76,7 +76,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
 
 #### Run "all cells" and we will eventually store the combined dataset in here.
 #cd ${OUTDIR}
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -88,7 +88,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
 
 ### Then run for all cells one by one.
 # Run for Mon
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -100,7 +100,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
 
 
 # Run for Mac0
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -111,7 +111,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames Mac0,VProm,coding_snp
 
 # Run for Mac1
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -122,7 +122,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames Mac1,VProm,coding_snp
 
 # Run for Mac2
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -133,7 +133,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames Mac2,VProm,coding_snp
 
 # Run for Neu
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -144,7 +144,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames Neu,VProm,coding_snp
 
 # Run for EP
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -155,7 +155,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames EP,VProm,coding_snp
 
 # Run for Ery
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -166,7 +166,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames Ery,VProm,coding_snp
 
 # Run for MK
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -177,7 +177,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames MK,VProm,coding_snp
 
 # Run for FoeT
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -188,7 +188,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames FoeT,VProm,coding_snp
 
 # Run for nCD4
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -199,7 +199,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames nCD4,VProm,coding_snp
 
 # Run for tCD4
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -210,7 +210,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames tCD4,VProm,coding_snp
 
 # Run for aCD4
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -221,7 +221,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames aCD4,VProm,coding_snp
 
 # Run for naCD4
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -232,7 +232,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames naCD4,VProm,coding_snp
 
 # Run for nCD8
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -243,7 +243,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames nCD8,VProm,coding_snp
 
 # Run for tCD8
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -254,7 +254,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames tCD8,VProm,coding_snp
 
 # Run for nB
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -265,7 +265,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames nB,VProm,coding_snp
 
 # Run for tB
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
