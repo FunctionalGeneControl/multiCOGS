@@ -52,7 +52,7 @@ conda deactivate
 
 source activate DT_DPLYR
 cd ${OUTDIR}
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -63,7 +63,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --gwas ~/external_data/gwas/SuSIE/cd_for_mikhail_SuSIE_fix.csv
 
 #### Run for 5Kb interactions only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -75,7 +75,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
 	--featureNames chicago_5kb
 
 #### Run for fres only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -87,7 +87,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames chicago_fres
 
 #### Run for ABC only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
@@ -99,7 +99,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames ABC.Score
 
 #### Run for VProm and coding only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases 12194 \
         --ncontrols 28072 \
         --cogsIn ${OUTDIR} \
