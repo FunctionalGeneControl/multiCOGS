@@ -8,7 +8,7 @@
 
 ###### Specify all input data and genome assembly.
 ###### Run for all required GWAS.
-##### This is the folder where all required scripts can be found (Make_rCOGS_input_files.sh, run_Mikhails_rCOGS.R, and dependent scripts)
+##### This is the folder where all required scripts can be found (Make_rCOGS_input_files.sh, run_rCOGS.R, and dependent scripts)
 SCRIPTS=~/HRJ_monocytes/hILCs/scripts/helen_scripts_for_rCOGS_in
 #####
 
@@ -76,7 +76,7 @@ cp ~/HRJ_monocytes/hILCs/rCOGS_in/Archive/COGS_input_deLange_ILCs_hg38_newVEP_po
 ### Note, the PM contains additional columns N_fres, N_5kb and N_abc. These should be ignored, so required feature names are given.
 source activate DT_DPLYR
 cd ${DIR}/COGS_input_${MYNAME}
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
