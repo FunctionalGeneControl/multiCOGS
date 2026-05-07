@@ -4,7 +4,8 @@ In these runs, we compared different iterations of COGS, running with Crohn's Di
 
 The contents of the scripts are as follows:
 
-[01_preparing_PMs_for_COGS.ipynb](https://pages.github.com/) - the peakmatrices (containing pCHi-C interactions and ABCC pairings) required some modification in order to be compatible with rCOGS. This script details these modifications, as well as some downstream comparisons post-COGS. Please note, the ILC3 and CD4+ T cell peakmatrices provided in our [OSF repository](https://osf.io/aq9fb/wiki?wiki=4j6ea) have already been formatted for COGS, so this step is not necessary for them.
+[01_preparing_PMs_for_COGS.ipynb](https://pages.github.com/) - the peakmatrices (containing pCHi-C interactions and ABCC pairings) required some modification in order to be compatible with rCOGS. This script details these modifications, as well as some downstream comparisons post-COGS. 
+*Please note, the ILC3 and CD4+ T cell peakmatrices provided in our [OSF repository](https://osf.io/aq9fb/wiki?wiki=4j6ea) have already been formatted for COGS, so this step is not necessary for them.*
 
 [02_wrapper_ILCs_updateABC_deLange_classicCOGS_combinedInteractions_Extended.ipynb](https://github.com/hrayjones/multiCOGS/blob/master/rCOGS_runs/COGS_v_multiCOGS_in_Crohns/02_wrapper_ILCs_updateABC_deLange_classicCOGS_combinedInteractions_Extended.sh) - wrapper script for classic (univariate fine-mapping) COGS, run without summary statistics imputation, on Crohn's Disease with hILC3 data.
 
