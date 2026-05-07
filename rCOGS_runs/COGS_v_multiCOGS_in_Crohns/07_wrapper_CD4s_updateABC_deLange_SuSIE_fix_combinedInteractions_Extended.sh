@@ -14,7 +14,7 @@
 ###### (c) for 5kb, the absolute values of cor(ABCnumerator, GE) are about twice as high as for single frag.
 
 
-##### This is the folder where all required scripts can be found (Make_rCOGS_input_files.sh, run_Mikhails_rCOGS.R, and dependent scripts)
+##### This is the folder where all required scripts can be found (Make_rCOGS_input_files.sh, run_rCOGS.R, and dependent scripts)
 SCRIPTS=~/HRJ_monocytes/hILCs/scripts/helen_scripts_for_rCOGS_in
 #####
 
@@ -90,7 +90,7 @@ SUSIE=~/HRJ_monocytes/external_data/gwas/SuSIE/cd_for_mikhail_SuSIE_fix.csv
 
 #### Here the SuSIE input file is used, in place of GWAS. 
 #### Run on everything
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -102,7 +102,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames chicago_score_fres,chicago_score_5kb,ABC.Score,VProm,coding_snp
 
 ##### Run for all CHiC interactions and ABC (no VProm or coding)
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -115,7 +115,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
 # I want to double check that the result of this run is the same as putting all chicago interactions and ABC into one column.
 
 ##### Run for 5Kb interactions only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -128,7 +128,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
 
 
 ##### Run for fres only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -140,7 +140,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames chicago_score_fres
 #
 ##### Run for ABC only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -152,7 +152,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames ABC.Score
 #
 ##### Run for VProm and coding only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -164,7 +164,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames VProm,coding_snp
 #
 ##### Run for everything except coding
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -176,7 +176,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames VProm,chicago_score_fres,chicago_score_5kb,ABC.Score
 #
 ##### Run for everything except ABC
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -188,7 +188,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
 	--featureNames VProm,coding_snp,chicago_score_fres,chicago_score_5kb
 #
 #### Run for VProm only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -200,7 +200,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames VProm
 #
 ##### Run for coding only
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -212,7 +212,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
         --featureNames coding_snp
 
 ##### Run for all CHiC interactions
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
