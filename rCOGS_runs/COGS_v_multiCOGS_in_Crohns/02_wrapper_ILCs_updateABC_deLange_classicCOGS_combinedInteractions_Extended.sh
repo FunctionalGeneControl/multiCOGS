@@ -78,7 +78,7 @@ cp ~/HRJ_monocytes/hILCs/rCOGS_in/Archive/COGS_input_deLange_ILCs_hg38_newVEP_po
 ### Note, the PM contains additional columns N_fres, N_5kb and N_abc. These should be ignored, so required feature names are given.
 source activate DT_DPLYR
 cd ${DIR}/COGS_input_${MYNAME}
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
