@@ -1,4 +1,6 @@
-## COGS and multiCOGS runs in Crohn's Disease, using 3D chromatin data from hILC3s and CD4+ T cells
+## COGS and multiCOGS runs in Crohn's Disease (hILC3s and CD4+ T cells)
+
+**TODO: update the script 01_preparing... and update the PMs on OSF, so that no formatting needed for COGS (test this!)**
 
 In these runs, we compared different iterations of COGS, running with Crohn's Disease GWAS data and pCHI-C/ABCC data in hILC3s and CD4+ T cells. The results are presented in our paper on Biorxiv [Malysheva/Ray-Jones/Lakes et al., 2026](https://www.biorxiv.org/content/10.1101/2022.10.19.512842v4)
 
