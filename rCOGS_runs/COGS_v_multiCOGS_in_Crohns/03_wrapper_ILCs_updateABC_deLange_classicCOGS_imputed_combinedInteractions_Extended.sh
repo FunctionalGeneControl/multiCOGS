@@ -85,7 +85,7 @@ SUSIE=~/HRJ_monocytes/external_data/gwas/SuSIE/cd_for_mikhail_SuSIE_fix.csv
 
 #### Here the SuSIE input file is used, but we just use the single.pp (i.e. imputation but not mulitple credible sets)
 #### Run on everything
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
@@ -98,7 +98,7 @@ Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
 
 ## May also want to run on individual features. For example, only on ABC.
 
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
         --ncases ${NCASES} \
         --ncontrols ${NCONTROLS} \
         --cogsIn ${DIR}/COGS_input_${MYNAME} \
