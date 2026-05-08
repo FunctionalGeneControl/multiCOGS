@@ -18,3 +18,5 @@ The contents of the scripts are as follows:
 [06_wrapper_CD4s_updateABC_deLange_classicCOGS_imputed_combinedInteractions_Extended.sh](https://github.com/hrayjones/multiCOGS/blob/master/rCOGS_runs/COGS_v_multiCOGS_in_Crohns/06_wrapper_CD4s_updateABC_deLange_classicCOGS_imputed_combinedInteractions_Extended.sh) - wrapper script for classic (univariate fine-mapping) COGS, run with summary statistics imputation, on on Crohn's Disease with CD4+ T cell data.
 
 [07_wrapper_CD4s_updateABC_deLange_SuSIE_fix_combinedInteractions_Extended.sh](https://github.com/hrayjones/multiCOGS/blob/master/rCOGS_runs/COGS_v_multiCOGS_in_Crohns/07_wrapper_CD4s_updateABC_deLange_SuSIE_fix_combinedInteractions_Extended.sh) - wrapper script for multiCOGS (multivariate fine-mapping with SuSIE), which includes summary statistics imputation, on on Crohn's Disease with CD4+ T cell data.
+
+[08_downstream_checks_on_COGS.ipynb](https://github.com/hrayjones/multiCOGS/blob/master/rCOGS_runs/COGS_v_multiCOGS_in_Crohns/08_downstream_checks_on_COGS.ipynb) - code during the project for checking the input peakmatrices and comparing COGS runs downstream.
