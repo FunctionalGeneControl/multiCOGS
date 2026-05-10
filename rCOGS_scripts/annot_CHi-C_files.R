@@ -207,7 +207,7 @@ setkey(pm, baitID)
 # Thus, if there are any fragments in the baitID column in the PM that are not included in the baitmap, those rows will be removed.
 # However, the command will also add in baits that were included in the baitmap, but did not have significant CHi-C interactions or ABCC pairings.
 # By adding these "unbaited" promoters, they can be included in the virtual promoters (VProm) analysis used by COGs. 
-# For VProm, SNPs are assigned to promoters if they fall within the fragment containing the promoter (or X number of fragments adjacent to the promoter fragment, default 5). 
+# For VProm, SNPs are assigned to promoters if they fall within the fragment containing the promoter (or X number of fragments adjacent to the promoter fragment, default 1). 
 annot <- pm[h, on = c(baitID = "fragID"), allow.cartesian=TRUE]
 
 
