@@ -8,20 +8,13 @@
 ###### Specify all input data and genome assembly.
 ###### Run for all required GWAS.
 
-##### This is the folder where all required scripts can be found (Make_rCOGS_input_files.sh, run_Mikhails_rCOGS.R, and dependent scripts)
+##### This is the folder where all required scripts can be found (Make_rCOGS_input_files.sh, run_rCOGS.R, and dependent scripts)
 SCRIPTS=~/HRJ_monocytes/hILCs/scripts/helen_scripts_for_rCOGS_in
 #####
 
 ##########################################################################################################################
 ### Requirements for rCOGS input files are described here: https://ollyburren.github.io/rCOGS/articles/Quickstart.html ###
 ##########################################################################################################################
-
-### Our new interaction PM uses frag res, 5kb and ABC interactions. However, the first three cols correspond to fragment level ints. 
-### Only using the extended PM.
-### Now using the peakmatrix with increased ABC cutoff. But there are more ABC interactions than before (other improvements were made to the ABC pipeline.)
-# the extended (hopefully used for the final paper version): ~/spivakov/miniPCHiC/hILCs/ILC3/PCHiC/data/ILC3_chicago_fres_bin_5kb_abc_023_fres_extended_peakm_13012025.txt
-# The PM was modified in the first script in this folder to make it suitable to run with COGS scripts.
-# Updated script of Make_rCOGS_input_files.sh does not require a gwas file input when run for SuSIE.
 
 ######## MODIFY THE FOLLOWING PATHS.
 
@@ -103,7 +96,7 @@ cd ${DIR}/COGS_input_${MYNAME}
 
 #### Here the SuSIE input file is used, in place of GWAS. 
 #### Run on everything
-Rscript ${SCRIPTS}/run_Mikhails_rCOGS.R \
+Rscript ${SCRIPTS}/run_rCOGS.R \
     --ncases ${NCASES} \
     --ncontrols ${NCONTROLS} \
     --cogsIn ${DIR}/COGS_input_${MYNAME} \
