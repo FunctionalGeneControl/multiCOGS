@@ -203,8 +203,15 @@ if(expa == TRUE) {
 
 print("Annotating the peak matrix with gene information")
 setkey(pm, baitID)
+# Note, the following command, as well as adding gene names, restricts the PM to the baits included in the capture design (baitmap). 
+# Thus, if there are any fragments in the baitID column in the PM that are not included in the baitmap, those rows will be removed.
+# However, the command will also add in baits that were included in the baitmap, but did not have significant CHi-C interactions or ABCC pairings.
+# By adding these "unbaited" promoters, they can be included in the virtual promoters (VProm) analysis used by COGs. 
+# For VProm, SNPs are assigned to promoters if they fall within the fragment containing the promoter (or X number of fragments adjacent to the promoter fragment, default 5). 
 annot <- pm[h, on = c(baitID = "fragID"), allow.cartesian=TRUE]
 
+
+# The following is a useful function for moving columns in a dataframe. Used to modify the final annotated peakmatrix.
 moveme <- function (invec, movecommand) {
   movecommand <- lapply(strsplit(strsplit(movecommand, ";")[[1]], 
                                  ",|\\s+"), function(x) x[x != ""])
