@@ -25,9 +25,9 @@ The scripts should be run in the following order. For full examples, see the wra
 ### 1. Make the COGS input files using [Make_rCOGS_input_files.sh](/rCOGS_scripts/Make_rCOGS_input_files.sh)
 
 This script generates input directories containing the following formatted files needed to run COGS:
-- Approx. LD independent region file, 
-- MAF file,
-- Restriction fragment digest file,
+- Approx. LD independent region file
+- MAF file
+- Restriction fragment digest file
 - pCHi-C design/annotation file
 
 Note, [annot_CHi-C_files.R](/rCOGS_scripts/annot_CHi-C_files.R) will be run from within this script. Please ensure that annot_CHi-C_files.R is located within the same directory as Make_rCOGS_input_files.sh, and that R is available with libraries *argparser* and *data.table* installed.
@@ -93,7 +93,7 @@ Additionally:
 
 **The following options can be used with run_vep.sh:**
 - `--method` - The method with which to run VEP. rsid: runs VEP using rsids. varVCF: gets vcf using variant IDs. posVCF: gets vcf using variant positions. posVCF requires --positions option. Default = rsids.
-- `--positions` - A file with chr, position. Needs to be supploed for method = posVCF. 
+- `--positions` - A file with chr, position. Needs to be supplied for method = posVCF. 
 - `--help` - prints help message
 
 The VEP script also edits the final coding SNPS file ("coding.txt") to make it compatible for rCOGS. Please double check that this formatting is working correctly in your case. The final coding SNPs file is named "coding.format.txt".
@@ -129,7 +129,7 @@ Additionally:
 - `--featureNames` - This is a comma separated list of which score columns COGS should consider. These columns should have been included in the input peakmatrix and can include, for example, chicago_score or ABCC_score. If using specific features, make sure to add the "VProm" and "coding_snp" features. Default is that all features are used, i.e. all score columns, plus VProm and coding_snp. For examples of runs using different features, see a wrapper script such as [04_wrapper_ILCs_updateABC_deLange_SuSIE_fix_combinedInteractions_Extended.sh](/rCOGS_runs/COGS_v_multiCOGS_in_Crohns/04_wrapper_ILCs_updateABC_deLange_SuSIE_fix_combinedInteractions_Extended.sh)
 - `--vProm` - This is the number of fragments to use when creating virtual promoter regions, default = 1. Note, we used 5 fragments in our analyses.
 - `--chicThresh` - The hard threshold for CHiC interactions. Scores will only be considered ABOVE this value. This is why we set all ABCC scores to 5.1 in our input peakmatrices.
-- `--susie` - flag to run on the SuSIE (multiCOGS) setting. If so, provide the SuSIE .csv file, containing PPIs, in place of the GWAS file above. Do not need to supply LD blocks. Please note, for SNPs where SuSIE's data aren't available or were filtered out, we currently use single.pp from a single causal variant model (Wakefield synthesis), provided in a separate column of the SuSIE input file. Please see the input SuSIE files included in our paper: **LINK**
+- `--susie` - flag to run on the SuSIE (multiCOGS) setting. If so, provide the SuSIE .csv file, containing PPIs, in place of the GWAS file above. Do not need to supply LD blocks. Please note, for SNPs where SuSIE's data aren't available or were filtered out, we currently use single.pp from a single causal variant model (Wakefield synthesis), provided in a separate column of the SuSIE input file. Please see the input SuSIE files included in our paper: **LINK TO PROVIDE**
 
 
 
