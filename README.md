@@ -18,7 +18,7 @@ The folders rCOGS_runs and rCOGS_scripts contain analysis code used in the Malys
 
 ## Explanation on the scripts for running multiCOGS in rCOGS_scripts
 
-The scripts should be run in the following order. For full examples, see the wrapper scripts in [rCOGS_runs/multiCOGS_in_autoimmune_traits](/rCOGS_runs/multiCOGS_in_autoimmune_traits)
+The scripts should be run in the following order. For full examples (wrapper scripts) and data sources, see [rCOGS_runs/multiCOGS_in_autoimmune_traits](/rCOGS_runs/multiCOGS_in_autoimmune_traits)
 
 *Please see also original [rCOGS github repo](https://ollyburren.github.io/rCOGS/articles/Quickstart.html) for an explanation of the main input files for COGS.*
 
