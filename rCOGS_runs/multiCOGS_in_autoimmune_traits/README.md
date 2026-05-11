@@ -6,7 +6,7 @@ In these runs, we ran multiCOGS for autoimmune traits, using pCHI-C/ABCC data in
 
 - The peakmatrices for these runs are available as files Data_S5 (ILC3s) and Data_S9 (CD4+ T cells) in our [OSF repository](https://osf.io/aq9fb/overview)
 - The SuSIE fine-mapped data are available at: [XXX]()
-- The rmap and baitmap (CHi-C design) are available at: [YYY]()
+- The rmap and baitmap (CHi-C design) at DpnII-fragment level are available in Data_S12 in our [OSF repository](https://osf.io/aq9fb/files/osfstorage)
 
 
 ### The following traits were analysed in the wrapper scripts:
