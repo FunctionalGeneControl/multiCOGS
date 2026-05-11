@@ -99,6 +99,37 @@ Additionally:
 The VEP script also edits the final coding SNPS file ("coding.txt") to make it compatible for rCOGS. Please double check that this formatting is working correctly in your case. The final coding SNPs file is named "coding.format.txt".
 
 ### 3. Run rCOGS (or multiCOGS) using [run_rCOGS.R](/rCOGS_scripts/run_rCOGS.R)
+If steps 1 and 2 were followed, the input files should now be ready to run with COGS/multiCOGS. The run_COGS.R script utilises the scripts in the present folder:
+- cogs.R
+- data.R
+- gwas.R
+- pchic.R
+- sCVPP.R
+
+Please see the wrapper scripts in [COGS_v_multiCOGS_in_Crohns](/rCOGS_runs/COGS_v_multiCOGS_in_Crohns) for examples of how to use run_rCOGS.R in different fine-mapping settings (univariate vs multivariate) and with different features (e.g. chicago, ABCC, VProm, coding).
+
+**The following inputs are needed to run run_COGS.R:**
+- `--cogsIn` - This is the directory with the prepared files from steps 1 and 2 above, i.e. the `--outDir` from Make_rCOGS_input_files.sh and run_vep.sh above. In this folder, there should be the following files, which will be detected by run_COGS.R (these can also be supplied separately to the run_COGS.R script):
+    - LD regions file with columns named: chr, start, end", default="_ld.format.bed$", can also be supplied with `--ld`
+    - MAF file with columns named: chr, pos, maf.", default="formatted.maf.txt$", can also be supplied with `--maf`
+    - GWAS data with columns named: chr, pos, p.", default="_gwas.format.txt$", can also be supplied with `--gwas`. NOTE - if using a mutivariate fine-mapped SuSIE table, supply this in place of the default pattern. You also need to use the `--susie` flag (optional argument, below). See a wrapper script such as [01_wrapper_ILCs_ASTAO_Ferreira_30929738.sh](/rCOGS_runs/multiCOGS_in_autoimmune_traits/01_wrapper_ILCs_ASTAO_Ferreira_30929738.sh) as an example.
+    - Formatted peak matrix with biotypes", default = "_pm.format.txt$", can also be supplied with `--pmFormat`
+    - RMAP with columns named: chr, start, end, fragid", default = ".rmap_wHeader.txt$", can also be supplied with `--rmap`
+    - Annotated baits with columns named: fragid, ensg and biotype", default = "PCHiC_design_annotation_plusUnbaited_with_geneType.txt", can also be supplied with `--bannot`
+    - Coding SNPs with columns named: chr, pos, ensg", default = "coding.format.txt", can also be supplied with `--coding`
+- `--ncases` - The number of cases in the GWAS
+- `--ncontrols` - The number of controls in the GWAS
+- `--assembly` - Assembly as either GRCh37 or GRCh38, this is used to remove the MHC region. GRCh37 region defined as in RCOGS vignette: https://ollyburren.github.io/rCOGS/articles/Quickstart.html; GRCh38 region defined as in NCBI: https://www.ncbi.nlm.nih.gov/grc/human/regions/MHC?asm=GRCh38.p13  
+- `--cogsOut` - Directory for COGS output files
+
+Additionally:
+- <ins>TSS/gene information (currently hardcoded!)</ins> - The output ranked gene list of COGS has ENSG IDs but not gene names. The supplied gene information is used to further annotated the output COGS results. This table requires the column "ensg" and any additional annotation columns, such as gene name and TSS.
+
+**Explanation of the optional arguments for run_COGS.R:**
+- `--featureNames` - This is a comma separated list of which score columns COGS should consider. These columns should have been included in the input peakmatrix and can include, for example, chicago_score or ABCC_score. If using specific features, make sure to add the "VProm" and "coding_snp" features. Default is that all features are used, i.e. all score columns, plus VProm and coding_snp. For examples of runs using different features, see a wrapper script such as [04_wrapper_ILCs_updateABC_deLange_SuSIE_fix_combinedInteractions_Extended.sh](/rCOGS_runs/COGS_v_multiCOGS_in_Crohns/04_wrapper_ILCs_updateABC_deLange_SuSIE_fix_combinedInteractions_Extended.sh)
+- `--vProm` - This is the number of fragments to use when creating virtual promoter regions, default = 1. Note, we used 5 fragments in our analyses.
+- `--chicThresh` - The hard threshold for CHiC interactions. Scores will only be considered ABOVE this value. This is why we set all ABCC scores to 5.1 in our input peakmatrices.
+- `--susie` - flag to run on the SuSIE (multiCOGS) setting. If so, provide the SuSIE .csv file, containing PPIs, in place of the GWAS file above. Do not need to supply LD blocks. Please note, for SNPs where SuSIE's data aren't available or were filtered out, we currently use single.pp from a single causal variant model (Wakefield synthesis), provided in a separate column of the SuSIE input file. Please see the input SuSIE files included in our paper: **LINK**
 
 
 
