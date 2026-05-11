@@ -1,3 +1,5 @@
+## multiCOGS: COGS for multivariate finemapping data
+
 These R scripts implement an updated version of the rCOGS package as used in Malysheva/Ray-Jones et al., bioRxiv 2022. 
 
 The key differences from the original rCOGS package (https://github.com/ollyburren/rCOGS) are as follows:
@@ -13,3 +15,11 @@ The key differences from the original rCOGS package (https://github.com/ollyburr
 Note that multiROGS R package is still in progress, and currently all scripts should be sourced directly into the analysis notebooks. 
 
 The folders rCOGS_runs and rCOGS_scripts contain analysis code used in the Malysheva/Ray-Jones et al., bioRxiv 2022 that utilises multiCOGS functionality and can be seen as use examples for the new package.
+
+## Explanation on the scripts to run multiCOGS in rCOGS_scripts
+
+The scripts should be run in the following order. For full examples, see the wrapper scripts in [rCOGS_runs/multiCOGS_in_autoimmune_traits](/rCOGS_runs/multiCOGS_in_autoimmune_traits)
+
+1. [Make_rCOGS_input_files.sh](/rCOGS_scripts/Make_rCOGS_input_files.sh)
+...
+
