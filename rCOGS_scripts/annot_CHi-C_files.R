@@ -43,7 +43,7 @@ verb = opts[["verbose"]]
 ###############
 
 suppressMessages(library(data.table))
-suppressMessages(library(tidyr))
+#suppressMessages(library(tidyr)) # no longer needed
 
 sink(file = paste0(outdir, "/annot_CHiC_files.log"), type = c("output", "message")) 
 

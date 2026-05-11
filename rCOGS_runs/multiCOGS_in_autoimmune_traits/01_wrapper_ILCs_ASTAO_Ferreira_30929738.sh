@@ -67,7 +67,7 @@ conda deactivate
 ### 2. Get coding SNPs included in the GWAS (here SuSIE) using VEP on GRCh38, using positions.
 ### Note that, if the GWAS had been included and contained rsids, there would be a list of these in the prelim folder.
 ### As it is, we need to extract the cols chr, pos from the SuSIE file and use as input to run VEP using singularity.
-#cd ${DIR}/prelim_files_${MYNAME}
+cd ${DIR}/prelim_files_${MYNAME}
 
 # extract a file of chr, pos. This line accounts for the fact that some SNPs have _ref_alt added after the position, but not all of them!
 cat ${SUSIE} | tail -n +2 | cut -d',' -f1 | awk -F '_' '{print $1}' | awk -F':' '{print $1 "\t" $2}' > SNP_positions.txt
