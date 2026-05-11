@@ -52,17 +52,17 @@ NCONTROLS=300671
 ### CHECK THE PATHS IN THE COMMANDS.
 
 ################ 1. Make COGS input files.
-#source activate DT_DPLYR
-#cd $SCRIPTS
-#./Make_rCOGS_input_files.sh \
-#        --inputDir ${DIR}/prelim_files_${MYNAME} \
-#        --outDir ${DIR}/COGS_input_${MYNAME} \
-#	--pchic ${PM_MOD} \
-#        --baitmap ${BAITS} \
-#        --rmap ${RMAP} \
-#        --GRCh38 
+source activate DT_DPLYR
+cd $SCRIPTS
+./Make_rCOGS_input_files.sh \
+        --inputDir ${DIR}/prelim_files_${MYNAME} \
+        --outDir ${DIR}/COGS_input_${MYNAME} \
+        --pchic ${PM_MOD} \
+        --baitmap ${BAITS} \
+        --rmap ${RMAP} \
+        --GRCh38 
 
-#conda deactivate
+conda deactivate
 
 ### 2. Get coding SNPs included in the GWAS (here SuSIE) using VEP on GRCh38, using positions.
 ### Note that, if the GWAS had been included and contained rsids, there would be a list of these in the prelim folder.
@@ -70,19 +70,19 @@ NCONTROLS=300671
 #cd ${DIR}/prelim_files_${MYNAME}
 
 # extract a file of chr, pos. This line accounts for the fact that some SNPs have _ref_alt added after the position, but not all of them!
-#cat ${SUSIE} | tail -n +2 | cut -d',' -f1 | awk -F '_' '{print $1}' | awk -F':' '{print $1 "\t" $2}' > SNP_positions.txt
+cat ${SUSIE} | tail -n +2 | cut -d',' -f1 | awk -F '_' '{print $1}' | awk -F':' '{print $1 "\t" $2}' > SNP_positions.txt
 
 # Run VEP using this file as input.
-#source activate VEP
-#cd ${DIR}/COGS_input_${MYNAME}
-#~/HRJ_monocytes/hILCs/scripts/helen_scripts_for_rCOGS_in/run_vep.sh \
-#	-v /rds/general/user/hrayjone/home/anaconda3/envs/VEP/bin/ensembl-vep/vep \
-#	-i ${DIR}/prelim_files_${MYNAME} \
-#	-a GRCh38 \
-#	-o ${DIR}/COGS_input_${MYNAME} \
-#	-m posVCF \
-#	-p ${DIR}/prelim_files_${MYNAME}/SNP_positions.txt
-#conda deactivate
+source activate VEP
+cd ${DIR}/COGS_input_${MYNAME}
+~/HRJ_monocytes/hILCs/scripts/helen_scripts_for_rCOGS_in/run_vep.sh \
+	-v /rds/general/user/hrayjone/home/anaconda3/envs/VEP/bin/ensembl-vep/vep \
+	-i ${DIR}/prelim_files_${MYNAME} \
+	-a GRCh38 \
+	-o ${DIR}/COGS_input_${MYNAME} \
+	-m posVCF \
+	-p ${DIR}/prelim_files_${MYNAME}/SNP_positions.txt
+conda deactivate
 
 
 ### 3. Now run rCOGS on: frag res, 5Kb, ABC, All, Vprom/coding.
