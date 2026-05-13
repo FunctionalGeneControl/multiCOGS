@@ -8,7 +8,7 @@ suppressMessages(library(data.table))
 #### Run this from within folder with rCOGS input files
 ########################################################
 
-p <- arg_parser("Running rCOGS the data.table way", name="Rscript run_Mikhails_rCOGS.R")
+p <- arg_parser("Running rCOGS the data.table way", name="Rscript run_rCOGS.R")
 p <- add_argument(p, arg="--ld",
                   help="LD regions file with columns named: chr, start, end", default="_ld.format.bed$")
 p <- add_argument(p, arg = "--maf", 
