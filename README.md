@@ -1,6 +1,6 @@
 # multiCOGS: COGS for multivariate finemapping data
 
-These R scripts implement an updated version of the rCOGS package as used in Malysheva/Ray-Jones et al., bioRxiv 2022. 
+These R scripts implement an updated version of the rCOGS package as used in Malysheva/Ray-Jones/Lakes et al., 2026. 
 
 ## The key differences from the original rCOGS package (https://github.com/ollyburren/rCOGS) are as follows:
 
