@@ -18,7 +18,7 @@ The folders rCOGS_runs and rCOGS_scripts contain analysis code used in the Malys
 
 ## Explanation on the scripts for running multiCOGS in rCOGS_scripts
 
-The scripts should be run in the following order. For full examples (wrapper scripts) and data sources, see [rCOGS_runs/multiCOGS_in_autoimmune_traits](/rCOGS_runs/multiCOGS_in_autoimmune_traits)
+The scripts should be run in the following order. For **full examples** (wrapper scripts) and **data sources**, see [rCOGS_runs/multiCOGS_in_autoimmune_traits](/rCOGS_runs/multiCOGS_in_autoimmune_traits)
 
 *Please see also original [rCOGS github repo](https://ollyburren.github.io/rCOGS/articles/Quickstart.html) for an explanation of the main input files for COGS.*
 
@@ -48,8 +48,8 @@ Note, [annot_CHi-C_files.R](/rCOGS_scripts/annot_CHi-C_files.R) will be run from
     - oeName - Free text of what is interacting - deprecated.
     - dist - Distance between bait and other end - deprecated.
     - Additional columns contain CHiCAGO scores for one or more analyses, e.g. "ILC3_chicago_score_fres" and "ILC3_ABCC_score"
-- `--baitmap` - full path to the baitmap file containing captured fragments (no header; columns contain: chr, start, end, fragid, fragname)
-- `--rmap` - full path to the digest file, i.e. fragments across the whole genome (no header; columns contain: chr, start, end, fragid)
+- `--baitmap` - full path to the (fragment-level) baitmap file containing captured fragments (no header; columns contain: chr, start, end, fragid, fragname)
+- `--rmap` - full path to the (fragment-level) digest file, i.e. fragments across the whole genome (no header; columns contain: chr, start, end, fragid)
 
 Additionally:
 - <ins>LD blocks (currently hardcoded!)</ins>: these are files of approximately independent LD regions in the genome (column headers: chr, start, end). We use the files from Berisa and Pickrell:
