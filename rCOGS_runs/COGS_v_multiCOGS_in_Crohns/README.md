@@ -2,6 +2,15 @@
 
 In these runs, we compared different iterations of COGS, running with Crohn's Disease GWAS data and pCHI-C/ABCC data in hILC3s and CD4+ T cells. The results are presented in our paper on Biorxiv [Malysheva/Ray-Jones/Lakes et al., 2026](https://www.biorxiv.org/content/10.1101/2022.10.19.512842v4)
 
+### Data sources
+
+The input data can be found in our large supplementary data files in our [OSF repository](https://osf.io/aq9fb/overview):
+- The peakmatrices for these runs are available as files Data_S5 (ILC3s) and Data_S9 (CD4+ T cells).
+- The rmap and baitmap (CHi-C design), here used at DpnII-fragment level, are found in Data_S12.
+- The SuSIE fine-mapped files are available in Data_S13.
+
+### Description of the scripts
+
 The contents of the scripts are as follows:
 
 [01_preparing_PMs_for_COGS.ipynb](/rCOGS_runs/COGS_v_multiCOGS_in_Crohns/01_preparing_PMs_for_COGS.ipynb) - the peakmatrices (containing pCHi-C interactions and ABCC pairings) required some modification in order to be compatible with rCOGS. This script details these modifications. 

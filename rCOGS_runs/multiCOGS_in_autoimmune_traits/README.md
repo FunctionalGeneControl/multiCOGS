@@ -4,12 +4,13 @@ In these runs, we ran multiCOGS for autoimmune traits, using pCHI-C/ABCC data in
 
 ### Data sources
 
-- The peakmatrices for these runs are available as files Data_S5 (ILC3s) and Data_S9 (CD4+ T cells) in our [OSF repository](https://osf.io/aq9fb/overview)
-- The SuSIE fine-mapped data are available at: [XXX]()
-- The rmap and baitmap (CHi-C design) at DpnII-fragment level are available in Data_S12 in our [OSF repository](https://osf.io/aq9fb/files/osfstorage)
+The input data can be found in our large supplementary data files in our [OSF repository](https://osf.io/aq9fb/overview):
+- The peakmatrices for these runs are available as files Data_S5 (ILC3s) and Data_S9 (CD4+ T cells).
+- The rmap and baitmap (CHi-C design), here used at DpnII-fragment level, are found in Data_S12.
+- The SuSIE fine-mapped files are available in Data_S13.
 
 
-### The following traits were analysed in the wrapper scripts:
+### The following traits were analysed in the wrapper scripts in the current directory:
 
 - Asthma, adult onset (ASTAO) (PMID [30929738](https://pubmed.ncbi.nlm.nih.gov/30929738/))
   - multiCOGS in ILC3s: [01_wrapper_ILCs_ASTAO_Ferreira_30929738.sh](/rCOGS_runs/multiCOGS_in_6_autoimmune_traits/01_wrapper_ILCs_ASTAO_Ferreira_30929738.sh)
